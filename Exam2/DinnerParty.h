@@ -57,11 +57,7 @@ public:
 	*/
 	void remove(std::list<std::string>::iterator it) {
 		//1c: someone's getting out of hand. Let's ask them to leave.
-		for (auto i = room.begin(); i != room.end(); i++) {
-			if (i == it) {
-				// Finish this implementation
-			}
-		}
+		room.erase(it);
 	}
 };
 #endif

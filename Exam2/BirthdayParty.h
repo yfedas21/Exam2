@@ -8,8 +8,6 @@
 #include "Party.h"
 #include "BirthdayPartyTicket.h"
 
-// FIXME 2: Create BirthdayParty and BirthdayPartyTicket to host birthday parties!
-// FIXME 3: Update PartyFactory::factory() to allow it to be the ONLY method for creating a BirthdayParty
 /**
 * BirthdayParty is derived from Party
 */
@@ -20,7 +18,11 @@ private:
 
 	BirthdayParty() {} 
 	
-	friend class PartyFactory;
+	/** Only the PartyFactory can create a BirthdayParty 
+	* because the constructor is private and PartyFactory
+	* is a friend class of BirthdayParty
+	*/
+	friend class PartyFactory; 
 
 public:
 	/**
@@ -45,11 +47,7 @@ public:
 	* Remove the person identified by the iterator from the party
 	*/
 	void remove(std::list<std::string>::iterator it) {
-		for (auto i = room.begin(); i != room.end(); i++) {
-			if (i == it) {
-				// Finish this implementation
-			}
-		}
+		room.erase(it);
 	}
 };
 

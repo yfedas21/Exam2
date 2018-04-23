@@ -32,4 +32,5 @@ int main() // PLEASE DO NOT MODIFY THE MAIN FUNCTION
 	cout << "Party after Jane leaves:\n";
 	myparty->list(); // List the people left in the dinner party
 
+	system("PAUSE");
 }
