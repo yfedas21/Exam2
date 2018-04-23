@@ -15,7 +15,42 @@
 */
 class BirthdayParty : public Party
 {
+private:
+	std::list<std::string> room;
 
+	BirthdayParty() {} 
+	
+	friend class PartyFactory;
+
+public:
+	/**
+	* Add a person to the pary
+	* @param name the name of the party goer
+	*/
+	PartyTicket *add(std::string name) {
+		room.push_front(name);
+		std::list<std::string>::iterator i = room.begin();
+		return new BirthdayPartyTicket(this, i);
+	}
+
+	/**
+	* List all the persons currently at the party
+	*/
+	void list() {
+		for (auto i : room)
+			std::cout << i << std::endl;
+	}
+
+	/**
+	* Remove the person identified by the iterator from the party
+	*/
+	void remove(std::list<std::string>::iterator it) {
+		for (auto i = room.begin(); i != room.end(); i++) {
+			if (i == it) {
+				// Finish this implementation
+			}
+		}
+	}
 };
 
 #endif

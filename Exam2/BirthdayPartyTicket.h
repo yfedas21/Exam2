@@ -8,6 +8,15 @@
 
 class BirthdayPartyTicket : public PartyTicket
 {
+private: 
+	Party * the_party;
+	std::list<std::string>::iterator me;
+
+public:
+	BirthdayPartyTicket(Party *the_party, std::list<std::string>::iterator &me) :
+		the_party(the_party), me(me) {}
+
+	void leave();
 };
 
 #endif
