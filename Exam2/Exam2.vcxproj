@@ -18,6 +18,20 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BirthdayParty.h" />
+    <ClInclude Include="BirthdayPartyTicket.h" />
+    <ClInclude Include="DinnerParty.h" />
+    <ClInclude Include="DinnerPartyTicket.h" />
+    <ClInclude Include="Party.h" />
+    <ClInclude Include="PartyFactory.h" />
+    <ClInclude Include="PartyTicket.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BirthdayPartyTicket.cpp" />
+    <ClCompile Include="DinnerPartyTicket.cpp" />
+    <ClCompile Include="Source.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{E8004D1F-4036-47EC-94B2-404A724869B3}</ProjectGuid>
