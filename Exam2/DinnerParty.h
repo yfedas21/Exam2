@@ -31,7 +31,6 @@ public:
 	*/
 	PartyTicket * add(std::string name) {
 		/**
-		* FIXME 1a:
 		*   Pseudo-code
 		*    1. add name to the front of room
 		*    2. get iterator to the front of the room (this points to the recently added party goer)
@@ -39,20 +38,30 @@ public:
 		*            Pass to the constructor "this" party, and the iterator from step 2
 		*    4. return this new party ticket 
 		*/
+		room.push_front(name); // Step 1
+		std::list<std::string>::iterator i = room.begin(); // Step 2
+		return new DinnerPartyTicket(this, i); // Step 3
 	}
 
 	/**
 	* List all the persons currently in the party
 	*/
 	void list() {
-		// FIXME 1b: iterate through all the persons here.
+		// 1b: iterate through all the persons here.
+		for (auto i : room)
+			std::cout << i << std::endl;
 	}
 
 	/**
 	* Remove the person identified by the iterator from the party
 	*/
 	void remove(std::list<std::string>::iterator it) {
-		//FIXME 1c: someone's getting out of hand. Let's ask them to leave.
+		//1c: someone's getting out of hand. Let's ask them to leave.
+		for (auto i = room.begin(); i != room.end(); i++) {
+			if (i == it) {
+				// Finish this implementation
+			}
+		}
 	}
 };
 #endif
